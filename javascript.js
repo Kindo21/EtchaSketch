@@ -1,8 +1,11 @@
 const container = document.getElementById("container");
+const resetContainer = document.getElementById("container2");
 
 let rows;
 let cols;
 let target;
+let userRows;
+let userCols;
 
 /* set cells to an array somehow and then set attribute to all cells in array and write array to DOM.*/
 
@@ -30,6 +33,28 @@ document.querySelectorAll('.grid-item').forEach(target =>{
         target.setAttribute("style", "background-color:black;")
     })
 })
+
+let reset = document.createElement("BUTTON");
+reset.setAttribute("style", "height: 20px")
+reset.textContent = 'Reset';
+container2.appendChild(reset).className = "reset";
+reset.addEventListener("click", function() {
+    document.querySelectorAll('.grid-item').forEach(target => {
+        target.setAttribute("style", "background-color:white;")
+    }
+        
+    )
+    let gridSize =  prompt("Set grid size!")
+    div(gridSize, gridSize);
+    document.querySelectorAll('.grid-item').forEach(target =>{
+        //.addEventListener("mouseover", enter, false);
+        target.addEventListener("mouseover", Event => {
+            target.setAttribute("style", "background-color:black;")
+        })
+    })
+})
+
+
 
 /*target.addEventListener("mouseout", leave, false);*/
 
